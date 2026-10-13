@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4A5BD8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>ကျွန်ုပ်၏ အစီအစဉ်</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4F5FB;--sf:#fff;--ink:#181C38;--mu:#5B6180;--ln:#D5D8EA;--ac:#4A5BD8;--ai:#fff;--wn:#B86E00;--er:#B3261E;--ok:#2A8F5C;--tn:#E6E9FB;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10122A;--sf:#191C3A;--ink:#E9EBFA;--mu:#A0A6CC;--ln:#2D3260;--ac:#8E9CFF;--ai:#10122A;--wn:#F0B35A;--er:#FF8A80;--ok:#5FD596;--tn:#232850}}
+:root[data-theme="dark"]{--bg:#10122A;--sf:#191C3A;--ink:#E9EBFA;--mu:#A0A6CC;--ln:#2D3260;--ac:#8E9CFF;--ai:#10122A;--wn:#F0B35A;--er:#FF8A80;--ok:#5FD596;--tn:#232850}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans Myanmar","Padauk","Myanmar Text",system-ui,sans-serif;line-height:1.7;min-height:100vh}
+button,select,textarea{font:inherit;color:inherit}button{cursor:pointer}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--sf);border:1.5px solid var(--ln);border-radius:10px;padding:10px 12px;width:100%}
+:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+label{display:block;font-weight:500;margin:12px 0 4px}
+h2{font-size:1.05rem;margin:20px 0 8px}small,.muted{color:var(--mu)}.od{color:var(--er)}
+.err{color:var(--er);font-size:.9rem;min-height:1.3em;margin:4px 0 0}.note{color:var(--mu);font-size:.88rem}
+#app{max-width:560px;margin:0 auto;padding:0 16px 150px}
+header{padding:14px 0 2px}header small{display:block;line-height:1.3}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:16px;padding:16px;margin-top:14px}
+.hero{background:var(--ac);color:var(--ai);border:0}.hero .lbl{margin:0;opacity:.85}
+.big{font-size:clamp(1.5rem,7vw,2rem);font-weight:700;margin:0 0 6px;line-height:1.3}
+.bar{height:10px;background:var(--tn);border-radius:99px;overflow:hidden}.hero .bar{background:rgba(255,255,255,.3)}
+.bar i{display:block;height:100%;background:var(--ai);border-radius:99px}
+.qa{display:flex;gap:8px;margin-top:14px}.qa input{flex:1}
+.btn{background:var(--ac);color:var(--ai);border:0;border-radius:12px;padding:12px;font-weight:700;width:100%;margin-top:10px}
+.btn.sm{width:auto;margin:0;padding:10px 16px}.card .btn.sm{margin:8px 8px 0 0}
+.btn.ghost{background:none;color:var(--ink);border:1.5px solid var(--ln)}.btn.danger{background:none;color:var(--er);border:1.5px solid var(--er)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.fl{margin-top:12px;overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px}
+.chip{background:var(--sf);border:1.5px solid var(--ln);border-radius:99px;padding:5px 12px;white-space:nowrap}
+.chip.on{background:var(--tn);border-color:var(--ac);font-weight:700}
+.list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.t{display:flex;align-items:center;gap:10px;background:var(--sf);border:1px solid var(--ln);border-radius:14px;padding:8px 10px}
+.card .t{background:var(--bg)}
+.ck{flex:none;width:30px;height:30px;border-radius:50%;border:2px solid var(--ac);background:none;color:var(--ai);font-weight:700;line-height:1}
+.t.dn .ck{background:var(--ac)}.t.dn .tt{text-decoration:line-through;color:var(--mu)}
+.tb{flex:1;min-width:0;background:none;border:0;text-align:left;padding:2px 0;display:flex;flex-direction:column;line-height:1.45}
+.tt{font-weight:500;overflow-wrap:anywhere}.tb small{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pd{flex:none;width:8px;height:8px;border-radius:50%}.x{background:none;border:0;font-size:1.4rem;color:var(--mu);padding:0 6px}
+.empty{color:var(--mu);text-align:center;padding:22px 8px}
+.mnav{display:flex;align-items:center;justify-content:space-between;margin-top:14px}
+.mnav button{background:var(--sf);border:1px solid var(--ln);border-radius:10px;width:44px;height:44px;font-size:1.4rem}
+.seg{display:flex;margin:12px 0;border:1.5px solid var(--ln);border-radius:12px;overflow:hidden}
+.seg button{flex:1;background:var(--sf);border:0;padding:8px}.seg .on{background:var(--ac);color:var(--ai);font-weight:700}
+.grid7{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}.mh{text-align:center;margin-bottom:4px}
+.dc{background:var(--sf);border:1.5px solid var(--ln);border-radius:10px;padding:4px 0;display:flex;flex-direction:column;align-items:center;line-height:1.35;min-height:52px}
+.dc i{font-style:normal;font-size:.7rem;color:var(--ac);min-height:1em}.dc.td{border-color:var(--ac)}.dc.sel{background:var(--ac);color:var(--ai)}.dc.sel i,.dc.sel small{color:var(--ai)}
+.lh{width:100%;display:flex;justify-content:space-between;background:none;border:0;padding:0 0 8px;text-align:left}
+.two{display:flex;gap:8px;margin-top:10px}.two .btn{flex:1}
+.sw{display:flex;align-items:center;gap:10px;font-weight:400}.sw input{width:20px;height:20px;accent-color:var(--ac)}
+nav{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:center;background:var(--sf);border-top:1px solid var(--ln);padding-bottom:env(safe-area-inset-bottom,0px);z-index:3}
+nav button{flex:1;max-width:140px;background:none;border:0;padding:8px 4px;display:flex;flex-direction:column;align-items:center;line-height:1.3;color:var(--mu);font-size:.8rem}
+nav button span{font-size:1.3rem}nav .on{color:var(--ac);font-weight:700}
+.fab{position:fixed;right:max(16px,calc(50% - 264px));bottom:calc(76px + env(safe-area-inset-bottom,0px));width:58px;height:58px;border-radius:50%;border:0;background:var(--ac);color:var(--ai);font-size:2rem;line-height:1;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:3}
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:5}
+.sheet{position:fixed;left:0;right:0;bottom:0;margin:0 auto;max-width:560px;max-height:92%;overflow:auto;z-index:6;background:var(--sf);border-radius:20px 20px 0 0;padding:6px 18px calc(18px + env(safe-area-inset-bottom,0px))}
+.r2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.act{display:grid;gap:8px;margin-top:16px}.act .btn{margin:0}
+#toasts{position:fixed;top:calc(8px + env(safe-area-inset-top,0px));left:8px;right:8px;max-width:544px;margin:0 auto;z-index:20;display:grid;gap:8px}
+.toast{background:var(--ink);color:var(--bg);border-radius:14px;padding:12px 14px;display:grid;gap:4px;box-shadow:0 6px 20px rgba(0,0,0,.35)}
+.ta{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}.ta button{background:var(--ac);color:var(--ai);border:0;border-radius:8px;padding:6px 12px}
+</style>
+</head>
+<body>
+<div id="app"></div><div id="toasts" aria-live="assertive"></div>
+<script>
+const KEY='planner:v1';
+const CATS=[['work','💼','အလုပ်'],['home','🏠','အိမ်'],['health','💪','ကျန်းမာရေး'],['study','📚','လေ့လာရေး'],['money','💰','ငွေကြေး'],['me','⭐','ကိုယ်ပိုင်']];
+const PRI=[['h','အရေးကြီး','var(--er)'],['m','ပုံမှန်','var(--wn)'],['l','အေးဆေး','var(--ok)']];
+const REP=[['none','မထပ်ပါ'],['daily','နေ့စဉ်'],['weekdays','တနင်္လာ-သောကြာ'],['weekly','အပတ်စဉ်'],['monthly','လစဉ်']];
+const LEAD=[[-1,'မသတ်မှတ်'],[0,'အချိန်ရောက်တဲ့အခါ'],[5,'၅ မိနစ်အလို'],[10,'၁၀ မိနစ်အလို'],[30,'၃၀ မိနစ်အလို'],[60,'၁ နာရီအလို'],[1440,'၁ ရက်အလို']];
+const TPL=['🍳 ဒီနေ့ ဘာချက်မလဲ','🍲 မနက်ဖြန် ဘာချက်မလဲ','🛒 ဈေးဝယ်စာရင်း','🎒 ခရီးထွက်ပစ္စည်း'];
+const TABS=[['today','🏠','ဒီနေ့'],['cal','📅','ပြက္ခဒိန်'],['lists','📝','စာရင်းများ'],['set','⚙️','ဆက်တင်']];
+const MONTHS=['ဇန်နဝါရီ','ဖေဖော်ဝါရီ','မတ်','ဧပြီ','မေ','ဇွန်','ဇူလိုင်','ဩဂုတ်','စက်တင်ဘာ','အောက်တိုဘာ','နိုဝင်ဘာ','ဒီဇင်ဘာ'];
+const WD=['တနင်္ဂနွေ','တနင်္လာ','အင်္ဂါ','ဗုဒ္ဓဟူး','ကြာသပတေး','သောကြာ','စနေ'],WS=['နွေ','လာ','ဂါ','ဟူး','ကြာ','သော','နေ'];
+const $=s=>document.querySelector(s),pad=n=>String(n).padStart(2,'0');
+const ymd=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const parse=s=>new Date(s+'T00:00'),addDays=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x};
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const catOf=id=>CATS.find(c=>c[0]===id)||CATS[5];
+const mLabel=s=>{const[y,m]=s.split('-');return`${MONTHS[+m-1]} ${y}`};
+const dLabel=s=>{const[,m,d]=s.split('-').map(Number);return`${d} ${MONTHS[m-1]}`};
+const dFull=s=>`${WD[parse(s).getDay()]}၊ ${dLabel(s)}`;
+let db={tasks:[],lists:[],set:{sound:true,vib:true,awake:false,lead:10,theme:'auto'},fired:{},snz:{}};
+let tab='today',calMode='week',selDate=ymd(new Date()),catF='all',openList=null,form=null;
+const LN=(()=>{try{const C=window.Capacitor;if(C&&C.isNativePlatform&&C.isNativePlatform())return C.Plugins.LocalNotifications||C.registerPlugin('LocalNotifications')}catch(e){}return null})();
+let rt;function sched(){if(!LN)return;clearTimeout(rt);rt=setTimeout(resched,600)}
+async function resched(){if(!LN)return;try{
+  const p=await LN.getPending();if(p.notifications&&p.notifications.length)await LN.cancel({notifications:p.notifications});
+  const now=new Date(),L=[];
+  for(let n=0;n<=14;n++){const d=ymd(addDays(now,n));for(const k of db.tasks){
+    if(!k.time||k.lead<0||!occ(k,d)||(k.done&&k.done[d]))continue;
+    const fire=new Date(new Date(`${d}T${k.time}`)-k.lead*6e4);if(fire>now)L.push({fire,k})}}
+  L.sort((a,b)=>a.fire-b.fire);
+  const N=L.slice(0,200).map((x,i)=>({id:i+1,channelId:'reminders',title:`⏰ ${x.k.time} · ${x.k.title}`,
+    body:(x.k.note?x.k.note+' · ':'')+(x.k.lead?`${x.k.lead>=60?Math.round(x.k.lead/60)+' နာရီ':x.k.lead+' မိနစ်'}အလို သတိပေးချက်`:'အခု လုပ်ရမယ့်အချိန်ပါ'),
+    schedule:{at:x.fire,allowWhileIdle:true}}));
+  if(N.length)await LN.schedule({notifications:N})}catch(e){}}
+async function nativeInit(){if(!LN)return;try{
+  await LN.createChannel({id:'reminders',name:'သတိပေးချက်',importance:5,visibility:1,vibration:true});
+  const p=await LN.checkPermissions();if(p.display!=='granted')await LN.requestPermissions();
+  await resched()}catch(e){}}
+
+function load(){try{const r=JSON.parse(localStorage.getItem(KEY)||'null');if(r){db=Object.assign(db,r);db.set=Object.assign({sound:true,vib:true,awake:false,lead:10,theme:'auto'},r.set)}}catch(e){}
+  for(const k in db.fired)if(Date.now()-db.fired[k]>6048e5)delete db.fired[k]}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){}sched()}
+function applyTheme(){const t=db.set.theme,r=document.documentElement;t==='auto'?r.removeAttribute('data-theme'):r.setAttribute('data-theme',t)}
+
+function occ(k,d){if(d<k.date)return false;const a=parse(k.date),b=parse(d),n=Math.round((b-a)/864e5);
+  switch(k.rep){case'daily':return true;case'weekdays':return b.getDay()>0&&b.getDay()<6;case'weekly':return n%7===0;case'monthly':return b.getDate()===a.getDate();default:return d===k.date}}
+function tasksFor(d,all){return db.tasks.filter(k=>occ(k,d)&&(all||catF==='all'||k.cat===catF)).sort((a,b)=>(a.time||'99').localeCompare(b.time||'99')||'hml'.indexOf(a.pri)-'hml'.indexOf(b.pri))}
+function overdue(t){return db.tasks.filter(k=>k.rep==='none'&&k.date<t&&!(k.done&&k.done[k.date])&&(catF==='all'||k.cat===catF)).sort((a,b)=>a.date.localeCompare(b.date))}
+
+function row(k,d){const dn=!!(k.done&&k.done[d]),c=catOf(k.cat),p=PRI.find(x=>x[0]===k.pri)||PRI[1],S=k.subs||[];
+  return`<li class="t${dn?' dn':''}"><button class="ck" data-done="${k.id}|${d}" aria-pressed="${dn}" aria-label="ပြီးပြီ">${dn?'✓':''}</button><button class="tb" data-edit="${k.id}"><span class="tt">${esc(k.title)}</span><small>${k.rep==='none'&&d!==ymd(new Date())&&d<ymd(new Date())?dLabel(d)+' ':''}${k.time?'⏰ '+k.time+' ':''}${c[1]}${k.rep!=='none'?' 🔁':''}${k.time&&k.lead>=0?' 🔔':''}${S.length?` ☑ ${S.filter(s=>s.d).length}/${S.length}`:''}</small>${k.note?`<small>${esc(k.note)}</small>`:''}</button><i class="pd" style="background:${p[2]}" title="${p[1]}"></i></li>`}
+
+function vToday(){const t=ymd(new Date()),L=tasksFor(t),n=L.filter(k=>k.done&&k.done[t]).length,od=overdue(t);
+  return`<section class="card hero"><p class="lbl">${dFull(t)}</p><p class="big">${L.length?`${n}/${L.length} ပြီးပြီ`:'ဒီနေ့ အလုပ်မရှိသေးပါ'}</p><div class="bar"><i style="width:${L.length?n/L.length*100:0}%"></i></div></section>
+<div class="qa"><input id="qa" placeholder="အလုပ်အသစ် မြန်မြန်ထည့်ရန်..." enterkeyhint="done"><button class="btn sm" data-act="qadd">ထည့်</button></div>
+<div class="chips fl">${[['all','🔎','အားလုံး'],...CATS].map(c=>`<button class="chip${catF===c[0]?' on':''}" data-cf="${c[0]}">${c[1]} ${c[2]}</button>`).join('')}</div>
+${od.length?`<h2 class="od">⚠️ ကျော်လွန်နေတာ</h2><ul class="list">${od.map(k=>row(k,k.date)).join('')}</ul>`:''}
+<h2>ဒီနေ့</h2>${L.length?`<ul class="list">${L.map(k=>row(k,t)).join('')}</ul>`:'<p class="empty">+ ကိုနှိပ်ပြီး ထည့်ပါ။</p>'}`}
+
+function vCal(){const sd=parse(selDate),td=ymd(new Date());let head,grid;
+  const cell=(d,x)=>{const s=ymd(d),n=tasksFor(s,1).length;return`<button class="dc${s===selDate?' sel':''}${s===td?' td':''}" data-sel="${s}">${x||''}<b>${d.getDate()}</b><i>${n||''}</i></button>`};
+  if(calMode==='week'){const mon=addDays(sd,-((sd.getDay()+6)%7));head=`${dLabel(ymd(mon))} – ${dLabel(ymd(addDays(mon,6)))}`;
+    grid='<div class="grid7">'+[0,1,2,3,4,5,6].map(i=>{const d=addDays(mon,i);return cell(d,`<small>${WS[d.getDay()]}</small>`)}).join('')+'</div>'}
+  else{const y=sd.getFullYear(),m=sd.getMonth(),off=(new Date(y,m,1).getDay()+6)%7,dim=new Date(y,m+1,0).getDate();head=mLabel(selDate.slice(0,7));
+    grid='<div class="grid7 mh">'+[1,2,3,4,5,6,0].map(i=>`<small>${WS[i]}</small>`).join('')+'</div><div class="grid7">'+'<span></span>'.repeat(off)+Array.from({length:dim},(_,i)=>cell(new Date(y,m,i+1))).join('')+'</div>'}
+  const L=tasksFor(selDate,1);
+  return`<div class="mnav"><button data-nav="-1" aria-label="ရှေ့">‹</button><b>${head}</b><button data-nav="1" aria-label="နောက်">›</button></div>
+<div class="seg"><button data-mode="week" class="${calMode==='week'?'on':''}">အပတ်</button><button data-mode="month" class="${calMode==='month'?'on':''}">လ</button></div>${grid}
+<h2>${dFull(selDate)} · ${L.length} ခု</h2>${L.length?`<ul class="list">${L.map(k=>row(k,selDate)).join('')}</ul>`:'<p class="empty">ဒီနေ့ အလုပ်မရှိပါ။ + နဲ့ ထည့်ပါ။</p>'}`}
+
+function listCard(l){const n=l.items.filter(i=>i.d).length,op=openList===l.id;
+  return`<section class="card"><button class="lh" data-open="${l.id}"><b>${esc(l.name)}</b><small>${n}/${l.items.length} ${op?'▾':'▸'}</small></button>`+(op?
+  `<ul class="list">${l.items.map(i=>`<li class="t${i.d?' dn':''}"><button class="ck" data-li="${l.id}|${i.id}" aria-pressed="${!!i.d}">${i.d?'✓':''}</button><span class="tb tt">${esc(i.t)}</span><button class="x" data-ld="${l.id}|${i.id}" aria-label="ဖျက်မယ်">×</button></li>`).join('')}</ul>
+<div class="qa"><input data-ai="${l.id}" placeholder="အချက်အသစ်ထည့်ပါ"><button class="btn sm" data-addi="${l.id}">ထည့်</button></div>
+<div class="two"><button class="btn ghost sm" data-clr="${l.id}">ပြီးတာဖျက်</button><button class="btn danger sm" data-dl="${l.id}">စာရင်းဖျက်</button></div>`:'')+'</section>'}
+function vLists(){return`<div class="qa"><input id="nl" placeholder="စာရင်းအသစ်နာမည်"><button class="btn sm" data-act="addList">ဖန်တီး</button></div>
+<div class="chips fl">${TPL.map(n=>`<button class="chip" data-tpl="${esc(n)}">${n}</button>`).join('')}</div>
+${db.lists.length?db.lists.map(listCard).join(''):'<p class="empty">စာရင်း မရှိသေးပါ။ အပေါ်က ဥပမာတစ်ခုကို နှိပ်ကြည့်ပါ။</p>'}`}
+
+function vSet(){const s=db.set,pm='Notification' in window?Notification.permission:'x';
+  const opt=(a,v)=>a.map(o=>`<option value="${o[0]}"${String(o[0])===String(v)?' selected':''}>${o[1]}</option>`).join('');
+  return`<section class="card"><h2 style="margin-top:0">🔔 သတိပေးချက်</h2>${LN?'<p class="muted">Android သတိပေးချက်ကို သုံးထားပါတယ်။</p><p hidden>':'<p class="muted">'}Browser notification: <b>${pm==='granted'?'ဖွင့်ထားပြီး':pm==='denied'?'ပိတ်ထားပါတယ်':pm==='default'?'မဖွင့်ရသေးပါ':'ဒီ browser မှာ မရပါ'}</b></p>
+<button class="btn sm" data-act="perm">ခွင့်ပြုမယ်</button><button class="btn ghost sm" data-act="test">စမ်းကြည့်မယ်</button>
+<label class="sw"><input type="checkbox" data-set="sound"${s.sound?' checked':''}> အသံ</label><label class="sw"><input type="checkbox" data-set="vib"${s.vib?' checked':''}> တုန်ခါမှု</label>
+<label class="sw"><input type="checkbox" data-set="awake"${s.awake?' checked':''}> app ဖွင့်ထားတုန်း screen မပိတ်စေရန်</label>
+<label for="s-lead">အလုပ်အသစ်အတွက် သတိပေးချိန်</label><select id="s-lead" data-set="lead">${opt(LEAD,s.lead)}</select>
+<label for="s-th">အရောင်</label><select id="s-th" data-set="theme">${opt([['auto','အလိုအလျောက်'],['light','နေ့'],['dark','ညဉ့်']],s.theme)}</select>
+${LN?'<p class="note">✅ ဖုန်း lock ထားတာ၊ app ပိတ်ထားတာတောင် အချိန်မှန်ရင် မြည်ပါမယ်။ App ကို ဖွင့်တိုင်း ရှေ့ ၁၄ ရက်စာ သတိပေးချက်တွေကို ပြန်စီပေးပါတယ်။</p>':'<p class="note">⚠️ သတိပေးချက်က app ကို ဖွင့်ထားတုန်းပဲ မြည်ပါတယ်။ app ပိတ်ထားရင်/ဖုန်း lock ထားရင် မမြည်နိုင်ပါ။ အရေးကြီးတာတွေကို ဖုန်းရဲ့ alarm/calendar မှာပါ ထည့်ထားပါ။</p>'}</section>
+<section class="card"><h2 style="margin-top:0">💾 Backup</h2><textarea id="bk" rows="4" aria-label="backup">${esc(JSON.stringify({tasks:db.tasks,lists:db.lists,set:db.set}))}</textarea>
+<button class="btn sm" data-act="copy">ကူးမယ်</button><button class="btn ghost sm" data-act="restore">ပြန်ထည့်မယ်</button><p class="muted" id="bkm" role="status"></p></section>
+<section class="card"><p class="note" style="margin-top:0">ဒေတာတွေကို ဒီဖုန်း/browser ထဲမှာပဲ သိမ်းပါတယ်။</p><button class="btn danger" data-act="clear">ဒေတာအားလုံး ဖျက်မယ်</button></section>`}
+
+function subsHtml(){return form.subs.map((s,i)=>`<div class="t${s.d?' dn':''}" style="margin-top:6px"><button type="button" class="ck" data-sd="${i}" aria-pressed="${!!s.d}">${s.d?'✓':''}</button><span class="tb tt">${esc(s.t)}</span><button type="button" class="x" data-rs="${i}" aria-label="ဖျက်မယ်">×</button></div>`).join('')}
+function sheetHtml(){const f=form,ch=(a,k)=>a.map(c=>`<button type="button" class="chip${f[k]===c[0]?' on':''}" data-${k}="${c[0]}">${c[1]==='_'?'':c[1]+' '}${c[2]||c[1]}</button>`).join('');
+  const opt=(a,v)=>a.map(o=>`<option value="${o[0]}"${String(o[0])===String(v)?' selected':''}>${o[1]}</option>`).join('');
+  return`<div class="scrim" data-act="close"></div><div class="sheet" role="dialog" aria-modal="true" aria-label="အလုပ်"><h2>${f.id?'အလုပ် ပြင်မယ်':'အလုပ်အသစ်'}</h2>
+<label for="f-title" style="margin-top:0">ဘာလုပ်ရမလဲ</label><input id="f-title" value="${esc(f.title)}" placeholder="ဥပမာ - ဆေးသောက်ရန်"><p class="err" id="f-err" role="alert"></p>
+<label for="f-note">အသေးစိတ် / မှတ်ချက်</label><textarea id="f-note" rows="2">${esc(f.note)}</textarea>
+<div class="r2"><div><label for="f-date">ရက်စွဲ</label><input id="f-date" type="date" value="${f.date}"></div><div><label for="f-time">အချိန်</label><input id="f-time" type="time" value="${f.time}"></div></div>
+<p class="note">အချိန်ထည့်မှ သတိပေးချက် အလုပ်လုပ်ပါမယ်။</p>
+<label>အရေးကြီးမှု</label><div class="chips">${PRI.map(p=>`<button type="button" class="chip${f.pri===p[0]?' on':''}" data-pri="${p[0]}">${p[1]}</button>`).join('')}</div>
+<label>အမျိုးအစား</label><div class="chips">${CATS.map(c=>`<button type="button" class="chip${f.cat===c[0]?' on':''}" data-fcat="${c[0]}">${c[1]} ${c[2]}</button>`).join('')}</div>
+<div class="r2"><div><label for="f-rep">ထပ်ခြင်း</label><select id="f-rep">${opt(REP,f.rep)}</select></div><div><label for="f-lead">သတိပေးချိန်</label><select id="f-lead">${opt(LEAD,f.lead)}</select></div></div>
+<label>အဆင့်ဆင့် လုပ်စရာများ</label><div id="subs">${subsHtml()}</div>
+<div class="qa" style="margin-top:8px"><input id="f-sub" placeholder="အချက်ထည့်ပါ"><button type="button" class="btn sm" data-act="addSub">ထည့်</button></div>
+<div class="act"><button class="btn" data-act="saveT">သိမ်းမယ်</button>${f.id?'<button class="btn danger" data-act="delT">ဖျက်မယ်</button>':''}<button class="btn ghost" data-act="close">မလုပ်တော့ဘူး</button></div></div>`}
+
+function render(){const V={today:vToday,cal:vCal,lists:vLists,set:vSet};
+  $('#app').innerHTML=`<header><small>${dFull(ymd(new Date()))}</small><b>📅 ကျွန်ုပ်၏ အစီအစဉ်</b></header><main>${V[tab]()}</main>
+${tab==='today'||tab==='cal'?'<button class="fab" data-act="add" aria-label="အလုပ်အသစ်">+</button>':''}
+<nav>${TABS.map(t=>`<button data-tab="${t[0]}" class="${tab===t[0]?'on':''}"><span>${t[1]}</span>${t[2]}</button>`).join('')}</nav>${form?sheetHtml():''}`}
+
+let AC;function beep(){try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();AC.resume();const o=AC.createOscillator(),g=AC.createGain();o.connect(g);g.connect(AC.destination);o.frequency.value=880;g.gain.setValueAtTime(.25,AC.currentTime);o.start();o.stop(AC.currentTime+.45)}catch(e){}}
+let WL;async function wake(){try{if(db.set.awake&&!WL&&navigator.wakeLock){WL=await navigator.wakeLock.request('screen');WL.addEventListener('release',()=>WL=null)}else if(!db.set.awake&&WL){WL.release();WL=null}}catch(e){}}
+
+function fire(k,d,key,at,late){const now=Date.now(),mins=Math.round((at-now)/6e4),
+  body=(k.note?k.note+' · ':'')+(late?'လွတ်သွားတဲ့ သတိပေးချက်':mins>1?`ကြိုတင်သတိပေးချက် (${mins} မိနစ်ကျန်)`:'အခု လုပ်ရမယ့်အချိန်ပါ'),title=`⏰ ${k.time} · ${k.title}`;
+  const el=document.createElement('div');el.className='toast';el.setAttribute('role','alert');
+  el.innerHTML=`<b>${esc(title)}</b><span>${esc(body)}</span><div class="ta"><button data-tk="done|${k.id}|${d}">ပြီးပြီ</button><button data-tk="snz|${k.id}|${d}">၁၀ မိနစ်နောက်</button><button data-tk="x">ပိတ်</button></div>`;
+  $('#toasts').appendChild(el);
+  if(db.set.sound)beep();if(db.set.vib&&navigator.vibrate)navigator.vibrate([300,150,300]);
+  try{if(Notification.permission==='granted')new Notification(title,{body,tag:key})}catch(e){}}
+
+function tick(){if(LN)return;const now=new Date();let ch=false;
+  for(const n of[0,1]){const d=ymd(addDays(now,n));for(const k of db.tasks){
+    if(!k.time||k.lead<0||!occ(k,d)||(k.done&&k.done[d]))continue;
+    const at=new Date(`${d}T${k.time}`),key=`${k.id}|${d}|${k.lead}`;
+    if(now>=at-k.lead*6e4&&now-at<216e5&&!db.fired[key]){db.fired[key]=Date.now();ch=true;fire(k,d,key,at,now-at>12e4)}}}
+  for(const[s,v]of Object.entries(db.snz))if(Date.now()>=v.at){delete db.snz[s];ch=true;const k=db.tasks.find(z=>z.id===v.id);
+    if(k&&!(k.done&&k.done[v.d]))fire(k,v.d,s,new Date(`${v.d}T${k.time}`),false)}
+  if(ch)save()}
+
+function syncForm(){if(!form||!$('#f-title'))return;Object.assign(form,{title:$('#f-title').value,note:$('#f-note').value,date:$('#f-date').value,time:$('#f-time').value,rep:$('#f-rep').value,lead:+$('#f-lead').value})}
+function sure(t){if(t.dataset.sure)return true;t.dataset.sure=1;t.textContent='သေချာပါသလား? ထပ်နှိပ်ပါ';return false}
+const find=id=>db.tasks.find(k=>k.id===id),flist=id=>db.lists.find(l=>l.id===id);
+
+document.addEventListener('click',e=>{
+  try{AC=AC||new(window.AudioContext||window.webkitAudioContext)()}catch(x){}
+  const t=e.target.closest('[data-act],[data-tab],[data-edit],[data-done],[data-sel],[data-nav],[data-mode],[data-cf],[data-pri],[data-fcat],[data-sd],[data-rs],[data-open],[data-li],[data-ld],[data-addi],[data-clr],[data-dl],[data-tpl],[data-tk]');if(!t)return;
+  const D=t.dataset;
+  if(D.pri){form.pri=D.pri;document.querySelectorAll('[data-pri]').forEach(c=>c.classList.toggle('on',c.dataset.pri===D.pri));return}
+  if(D.fcat){form.cat=D.fcat;document.querySelectorAll('[data-fcat]').forEach(c=>c.classList.toggle('on',c.dataset.fcat===D.fcat));return}
+  if(D.sd!==undefined){syncForm();form.subs[+D.sd].d=form.subs[+D.sd].d?0:1;$('#subs').innerHTML=subsHtml();return}
+  if(D.rs!==undefined){syncForm();form.subs.splice(+D.rs,1);$('#subs').innerHTML=subsHtml();return}
+  if(D.tk){const[a,id,d]=D.tk.split('|');
+    if(a==='done'&&find(id)){const k=find(id);k.done=k.done||{};k.done[d]=1;save();render()}
+    if(a==='snz'){db.snz['s'+Date.now()]={at:Date.now()+6e5,id,d};save()}
+    t.closest('.toast').remove();return}
+  if(D.tab){tab=D.tab;form=null;render();scrollTo(0,0);return}
+  if(D.cf){catF=D.cf;render();return}
+  if(D.sel){selDate=D.sel;render();return}
+  if(D.mode){calMode=D.mode;render();return}
+  if(D.nav){const n=+D.nav,sd=parse(selDate);selDate=ymd(calMode==='week'?addDays(sd,7*n):new Date(sd.getFullYear(),sd.getMonth()+n,1));render();return}
+  if(D.edit){const k=find(D.edit);if(k){form={...k,subs:(k.subs||[]).map(s=>({...s}))};render()}return}
+  if(D.done){const[id,d]=D.done.split('|'),k=find(id);k.done=k.done||{};if(k.done[d])delete k.done[d];else k.done[d]=1;save();render();return}
+  if(D.open){openList=openList===D.open?null:D.open;render();return}
+  if(D.li){const[l,i]=D.li.split('|'),it=flist(l).items.find(z=>z.id===i);it.d=it.d?0:1;save();render();return}
+  if(D.ld){const[l,i]=D.ld.split('|'),L=flist(l);L.items=L.items.filter(z=>z.id!==i);save();render();return}
+  if(D.addi){const inp=document.querySelector(`[data-ai="${D.addi}"]`),v=inp.value.trim();if(v){flist(D.addi).items.push({id:uid(),t:v,d:0});save();render();document.querySelector(`[data-ai="${D.addi}"]`).focus()}return}
+  if(D.clr){const L=flist(D.clr);L.items=L.items.filter(z=>!z.d);save();render();return}
+  if(D.dl){if(!sure(t))return;db.lists=db.lists.filter(l=>l.id!==D.dl);save();render();return}
+  if(D.tpl){const id=uid();db.lists.unshift({id,name:D.tpl,items:[]});openList=id;save();render();return}
+  switch(D.act){
+    case'close':form=null;render();break;
+    case'add':form={title:'',note:'',date:tab==='cal'?selDate:ymd(new Date()),time:'',pri:'m',cat:catF==='all'?'me':catF,rep:'none',lead:db.set.lead,subs:[]};render();$('#f-title').focus();break;
+    case'qadd':{const v=$('#qa').value.trim();if(!v)break;db.tasks.push({id:uid(),title:v,note:'',date:ymd(new Date()),time:'',pri:'m',cat:catF==='all'?'me':catF,rep:'none',lead:-1,subs:[],done:{}});save();render();$('#qa').focus();break}
+    case'addList':{const v=$('#nl').value.trim();if(!v)break;const id=uid();db.lists.unshift({id,name:v,items:[]});openList=id;save();render();break}
+    case'addSub':{syncForm();const v=$('#f-sub').value.trim();if(v){form.subs.push({t:v,d:0});$('#subs').innerHTML=subsHtml();$('#f-sub').value='';$('#f-sub').focus()}break}
+    case'saveT':{syncForm();if(!form.title.trim()){$('#f-err').textContent='ဘာလုပ်ရမလဲ ရေးပါ။';$('#f-title').focus();break}
+      if(!form.date){$('#f-err').textContent='ရက်စွဲ ရွေးပါ။';break}
+      const old=form.id?find(form.id):null,rec={...form,id:form.id||uid(),title:form.title.trim(),lead:form.time?form.lead:-1,done:old?old.done||{}:{}};
+      if(old)db.tasks=db.tasks.map(k=>k.id===rec.id?rec:k);else db.tasks.push(rec);
+      selDate=rec.date<ymd(new Date())&&tab==='cal'?selDate:selDate;save();form=null;render();tick();break}
+    case'delT':if(!sure(t))break;db.tasks=db.tasks.filter(k=>k.id!==form.id);save();form=null;render();break;
+    case'perm':if(LN){(async()=>{try{await LN.requestPermissions();const x=await LN.checkExactNotificationSetting();if(x.exact_alarm!=='granted')await LN.changeExactNotificationSetting();await resched()}catch(y){}})()}else{try{Notification.requestPermission().then(render)}catch(x){}}break;
+    case'test':if(LN){LN.schedule({notifications:[{id:9999,channelId:'reminders',title:'⏰ စမ်းသပ်ချက်',body:'သတိပေးချက် အလုပ်လုပ်ပါတယ်',schedule:{at:new Date(Date.now()+5000),allowWhileIdle:true}}]}).catch(()=>{});break}fire({id:'test',title:'စမ်းသပ်ချက်',note:'သတိပေးချက် အလုပ်လုပ်ပါတယ်',time:`${pad(new Date().getHours())}:${pad(new Date().getMinutes())}`},ymd(new Date()),'test',new Date(),false);break;
+    case'copy':{const b=$('#bk');b.select();try{navigator.clipboard.writeText(b.value)}catch(x){try{document.execCommand('copy')}catch(y){}}$('#bkm').textContent='ကူးပြီးပါပြီ။';break}
+    case'restore':try{const r=JSON.parse($('#bk').value);if(!Array.isArray(r.tasks)||!Array.isArray(r.lists))throw 0;db.tasks=r.tasks;db.lists=r.lists;db.set=Object.assign(db.set,r.set||{});save();applyTheme();render()}catch(x){$('#bkm').textContent='Backup စာသား မမှန်ပါ။'}break;
+    case'clear':if(!sure(t))break;db.tasks=[];db.lists=[];db.fired={};db.snz={};save();render();break}
+});
+document.addEventListener('change',e=>{const t=e.target,k=t.dataset.set;if(!k)return;
+  db.set[k]=t.type==='checkbox'?t.checked:k==='lead'?+t.value:t.value;save();if(k==='theme')applyTheme();if(k==='awake')wake()});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'&&form){form=null;render();return}
+  if(e.key!=='Enter'||e.target.tagName!=='INPUT')return;const i=e.target,btn=i.id==='qa'?'[data-act=qadd]':i.id==='nl'?'[data-act=addList]':i.id==='f-sub'?'[data-act=addSub]':i.dataset.ai?`[data-addi="${i.dataset.ai}"]`:null;
+  if(btn){e.preventDefault();document.querySelector(btn).click()}});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){wake();tick();sched();render()}});
+
+load();applyTheme();render();wake();tick();setInterval(tick,15000);nativeInit();
+</script>
+</body>
+</html>
